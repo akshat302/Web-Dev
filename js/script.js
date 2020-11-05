@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded",
+function(event){
+    load("home.html")
+}
+);
 function openNav() {
     document.getElementById("mySidenav").style.width="250px";
 }
