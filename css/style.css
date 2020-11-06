@@ -1,27 +1,31 @@
 *{
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 body {
     font-family:'Montserrat';
-    font-size:1.8em;
-    background-color:#818181;
-    color:#818181;
+    font-size:2em;
+    background-color:#202330;
+    height: 100%;
+    color:#fff;
     margin:0;
 }
 .navbar{
     width:100%;
     height:10%;
-    background-color:#111;
+    background-color:#202330;
     padding:15px;
-    border-bottom:1px solid #009432;
 }
 #menu{
     position:relative;
     font-weight: bold;
     cursor:pointer;
+    color: #a1a1a1;
 }
 #menu:hover,#menu:focus{
-    color: #f1f1f1;
+    color:#fff;
 }
 #name{
     font-size:0.8em;
@@ -36,7 +40,7 @@ body {
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #202330;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -46,13 +50,13 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #a1a1a1;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+    color: #fff;
 }
 
 .sidenav .closebtn {
@@ -66,31 +70,60 @@ body {
     margin: 15px;
 }
 .col-12{
-    background-color: #111;
+    background-color: #202330;
     text-align: center;
-    border: #009432 1px  solid;
     margin-bottom: 5px;
 }
 .col-12 p{
     font-size: 0.8em;
 }
-input{
-    font-family: 'Montserrat';
-    background-color:aliceblue;
-    color: #111;
-    border: #009432 1px solid;
-    border-radius: 10px;
-    width: 100%;
-}
-.box{
-    background-color: #111;
-    border: #009432 1px solid;
-    padding: 10px;
-}
 .box h2{
     padding: 0;
     margin: 0;
     text-align: center;
+}
+.logo{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    stroke:#fff;
+    stroke-width:4px;
+    fill:none;
+    animation: fill 0.8s ease forwards 2s;
+}
+.logo path:nth-child(1){
+    stroke-dasharray: 1295.181640625;
+    stroke-dashoffset: 1295.181640625;
+    animation: line-anim 2s ease forwards;
+}
+.logo path:nth-child(2){
+    stroke-dasharray: 1022.64599609375;
+    stroke-dashoffset: 1022.64599609375;
+    animation: line-anim 2s ease forwards 0.3s;
+}
+.logo path:nth-child(3){
+    stroke-dasharray: 697.079833984375;
+    stroke-dashoffset: 697.079833984375;
+    animation: line-anim 2s ease forwards 0.6s;
+}
+.logo path:nth-child(4){
+    stroke-dasharray: 420.24951171875;
+    stroke-dashoffset: 420.24951171875;
+    animation: line-anim 2s ease forwards 0.9s;
+}
+@keyframes line-anim {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fill {
+    from{
+        fill:transparent;
+    }
+    to{
+        fill:white;
+    }
 }
 @media (min-width: 768px)
 {
@@ -110,6 +143,9 @@ input{
         margin-left: 20%;
         margin-right: 20%;
     }
+    #sm{
+        display: none;
+    }
 }
 @media (max-width: 767px)
 {
@@ -123,5 +159,8 @@ input{
     #menu{
         z-index: 1;
         float: left;
+    }
+    #lg{
+        display: none;
     }
 }
